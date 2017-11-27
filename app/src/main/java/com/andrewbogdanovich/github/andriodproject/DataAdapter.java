@@ -35,6 +35,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         holder.titleView.setText(article.getTitle());
         holder.descriptionView.setText(article.getDescription());
         holder.urlView.setText(article.getUrl());
+        holder.urlToImageView.setText(article.getUrlToImage());
+        holder.publishedAtView.setText(article.getPublishedAt());
 
     }
 
@@ -44,7 +46,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView nameView, authorView, titleView, descriptionView, urlView;
+        final TextView nameView, authorView, titleView, descriptionView, urlView, urlToImageView, publishedAtView;
 
         ViewHolder(View view) {
             super(view);
@@ -53,6 +55,8 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             titleView = view.findViewById(R.id.title_text_view);
             descriptionView = view.findViewById(R.id.description_text_view);
             urlView = view.findViewById(R.id.url_text_view);
+            urlToImageView = view.findViewById(R.id.image_url_text_view);
+            publishedAtView = view.findViewById(R.id.published_at_text_view);
         }
     }
 

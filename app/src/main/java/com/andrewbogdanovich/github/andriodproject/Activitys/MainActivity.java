@@ -29,8 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void setInitialData(){
-        articles.add(new Article("Sostav.ru","null","Bitcoin", "some descriprion_1","http://1111111"));
-        articles.add(new Article("Vice News", "Jordan Person","A second bitcoin Fork Is Looming", "some descriprion_2","http://1111111"));
-        articles.add(new Article("news", "jon","News title","some descriprion_3","http://1111111"));
+        articles.add(new Article("Sostav.ru","null","Bitcoin", "some descriprion_1","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("Vice News", "Jordan Person","A second bitcoin Fork Is Looming", "some descriprion_2","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("news", "jon","News title","some descriprion_3","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("Sostav.ru","null","Bitcoin", "some descriprion_1","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("Vice News", "Jordan Person","A second bitcoin Fork Is Looming", "some descriprion_2","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("news", "jon","News title","some descriprion_3","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("Sostav.ru","null","Bitcoin", "some descriprion_1","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("Vice News", "Jordan Person","A second bitcoin Fork Is Looming", "some descriprion_2","http://1111111", "http://222222.jpg", "2017.10.10"));
+        articles.add(new Article("news", "jon","News title","some descriprion_3","http://1111111", "http://222222.jpg", "2017.10.10"));
+
     }
 }

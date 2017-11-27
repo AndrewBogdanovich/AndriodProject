@@ -10,7 +10,7 @@ public class Article {
     private String urlToImage;
     private String publishedAt;
 
-    public Article(String name, String author, String title, String description, String url) {
+    public Article(String name, String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.name = name;
         this.author = author;
         this.title = title;
