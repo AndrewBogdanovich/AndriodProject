@@ -8,6 +8,11 @@
     tools:context="com.andrewbogdanovich.github.andriodproject.Activitys.MainActivity"
     android:orientation="vertical">
 
+<TextView
+    android:id="@+id/Api_text_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="MyJson"/>
 
 <android.support.v7.widget.RecyclerView
     android:id="@+id/Recycler_View"
@@ -17,5 +22,7 @@
     android:layout_height="match_parent">
 
 </android.support.v7.widget.RecyclerView>
+
+
 
 </LinearLayout>
