@@ -5,9 +5,13 @@ public class Source {
 
     private String name;
 
-    public Source() {
+    public Source(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Source() {
+
     }
 
     public String getId() {

@@ -17,7 +17,7 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
     private LayoutInflater inflater;
     private List<Articles> articleList;
 
-    public ArticleDataAdapter(Context context, List<Articles> articleList){
+    public ArticleDataAdapter(Context context, List<Articles> articleList) {
         this.articleList = articleList;
         this.inflater = LayoutInflater.from(context);
     }
@@ -33,6 +33,7 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
         Articles article = articleList.get(position);
         holder.titleView.setText(article.getTitle());
         holder.descriptionView.setText(article.getDescription());
+       // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
 
     }
 
@@ -42,11 +43,13 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         final TextView titleView, descriptionView;
+        //final ImageView imageView;
 
-        ViewHolder(View view){
+        ViewHolder(View view) {
             super(view);
+           // imageView = view.findViewById(R.id.newsImage_image_view);
             titleView = view.findViewById(R.id.title_text_view);
             descriptionView = view.findViewById(R.id.description_text_view);
 

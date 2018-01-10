@@ -1,6 +1,7 @@
 package com.andrewbogdanovich.github.andriodproject.Models.Article;
 
 public class Articles {
+
     private String publishedAt;
 
     private String author;
@@ -15,7 +16,7 @@ public class Articles {
 
     private String url;
 
-    public Articles() {
+    public Articles(String publishedAt, String author, String urlToImage, String title, Source source, String description, String url) {
         this.publishedAt = publishedAt;
         this.author = author;
         this.urlToImage = urlToImage;
@@ -23,6 +24,10 @@ public class Articles {
         this.source = source;
         this.description = description;
         this.url = url;
+    }
+
+    public Articles() {
+
     }
 
     public String getPublishedAt() {
