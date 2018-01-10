@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
@@ -14,6 +13,7 @@ import com.andrewbogdanovich.github.andriodproject.R;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -59,11 +59,8 @@ public class MainActivity extends AppCompatActivity {
         MainModel mainModel = new Gson().fromJson(parseText, MainModel.class);
 
 
-        Log.i("GSON", mainModel.getStatus() + " " + mainModel.getTotalResults());
-        for (Articles articles : mainModel.getArticles()) {
-            articleList.add(articles);
-
-            Log.i("GSON1",  articles.getUrlToImage());
-        }
+        //Log.i("GSON", mainModel.getStatus() + " " + mainModel.getTotalResults());
+        //  Log.i("GSON1",  articles.getUrlToImage());
+        articleList.addAll(Arrays.asList(mainModel.getArticles()));
     }
 }
