@@ -7,4 +7,5 @@
     <color name="colorDark">#212121</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGreyDivider">#BDBDBD</color>
+    <color name="colorSecondaryText">#757575</color>
 </resources>

@@ -38,7 +38,7 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
     public void onBindViewHolder(ArticleDataAdapter.ViewHolder holder, int position) {
         final Articles article = articleList.get(position);
         holder.titleView.setText(article.getTitle());
-        holder.descriptionView.setText(article.getDescription());
+        holder.publishedAtView.setText(article.getPublishedAt());
         // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
 
 
@@ -51,7 +51,8 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        final TextView titleView, descriptionView;
+        final TextView titleView;
+        final TextView publishedAtView;
         final RecyclerView recyclerView;
         //final ImageView imageView;
 
@@ -61,7 +62,7 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
             view.setOnClickListener(this);
             // imageView = view.findViewById(R.id.newsImage_image_view);
             titleView = view.findViewById(R.id.title_text_view);
-            descriptionView = view.findViewById(R.id.description_text_view);
+            publishedAtView = view.findViewById(R.id.published_text_view);
             recyclerView = view.findViewById(R.id.Recycler_View);
         }
 

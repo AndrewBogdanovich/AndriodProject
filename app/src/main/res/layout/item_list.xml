@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_list_relative_layout"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list_relative_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="80dp"
+    android:background="@drawable/divider_recycler_view"
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    >
 
     <LinearLayout
 
@@ -18,28 +21,31 @@
         <TextView
             android:id="@+id/title_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:textColor="@color/colorDark"
             android:textSize="16sp"
             tools:text="Title: some text." />
 
         <TextView
-            android:id="@+id/description_text_view"
+            android:layout_gravity="bottom"
+            android:id="@+id/published_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondaryText"
             tools:text="Description: some text, some text, some text." />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/image_linear_layout"
         android:layout_width="140dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
 
         <TextView
             android:id="@+id/exmple_text_view"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             tools:text="textexample" />
 
 

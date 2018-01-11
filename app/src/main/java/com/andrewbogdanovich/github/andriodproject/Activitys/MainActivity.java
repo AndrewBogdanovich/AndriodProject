@@ -2,7 +2,8 @@ package com.andrewbogdanovich.github.andriodproject.Activitys;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 
 import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
@@ -17,31 +18,29 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     List<Articles> articleList = new ArrayList<>();
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
-
+        // initView();
         setContentView(R.layout.activity_main);
         loadParser();
         loadDataInRecyclerView();
         //Toast.makeText(this, parseText, Toast.LENGTH_SHORT).show();
 
-
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
+        swipeRefreshLayout.setOnRefreshListener(this);
 
 
     }
 
+
     private void loadDataInRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.Recycler_View);
-
-        //GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
-        //recyclerView.setLayoutManager(gridLayoutManager);
-
         ArticleDataAdapter articleDataAdapter = new ArticleDataAdapter(this, articleList);
         recyclerView.setAdapter(articleDataAdapter);
 
@@ -63,5 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
         MainModel mainModel = new Gson().fromJson(parseText, MainModel.class);
         articleList.addAll(Arrays.asList(mainModel.getArticles()));
+    }
+
+
+    @Override
+    public void onRefresh() {
+        swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        }, 3000);
     }
 }
