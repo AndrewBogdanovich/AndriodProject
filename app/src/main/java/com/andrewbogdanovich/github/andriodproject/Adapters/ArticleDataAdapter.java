@@ -1,12 +1,15 @@
 package com.andrewbogdanovich.github.andriodproject.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.andrewbogdanovich.github.andriodproject.Activitys.WebViewActivity;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
 import com.andrewbogdanovich.github.andriodproject.R;
 
@@ -16,10 +19,13 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
 
     private LayoutInflater inflater;
     private List<Articles> articleList;
+    private Context context;
+
 
     public ArticleDataAdapter(Context context, List<Articles> articleList) {
         this.articleList = articleList;
         this.inflater = LayoutInflater.from(context);
+        this.context = context;
     }
 
     @Override
@@ -30,10 +36,12 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
 
     @Override
     public void onBindViewHolder(ArticleDataAdapter.ViewHolder holder, int position) {
-        Articles article = articleList.get(position);
+        final Articles article = articleList.get(position);
         holder.titleView.setText(article.getTitle());
         holder.descriptionView.setText(article.getDescription());
-       // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
+        // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
+
+
 
     }
 
@@ -42,17 +50,28 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
         return articleList.size();
     }
 
-
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         final TextView titleView, descriptionView;
+        final RecyclerView recyclerView;
         //final ImageView imageView;
 
+        @SuppressLint("WrongViewCast")
         ViewHolder(View view) {
             super(view);
-           // imageView = view.findViewById(R.id.newsImage_image_view);
+            view.setOnClickListener(this);
+            // imageView = view.findViewById(R.id.newsImage_image_view);
             titleView = view.findViewById(R.id.title_text_view);
             descriptionView = view.findViewById(R.id.description_text_view);
+            recyclerView = view.findViewById(R.id.Recycler_View);
+        }
 
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            final Articles article = articleList.get(position);
+            Intent intent = new Intent(context, WebViewActivity.class);
+            intent.putExtra("Link", article.getUrl());
+            context.startActivity(intent);
         }
     }
 }

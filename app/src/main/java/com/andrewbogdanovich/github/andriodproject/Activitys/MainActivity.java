@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         loadParser();
         loadDataInRecyclerView();
         //Toast.makeText(this, parseText, Toast.LENGTH_SHORT).show();
+
+
+
+
     }
 
     private void loadDataInRecyclerView() {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArticleDataAdapter articleDataAdapter = new ArticleDataAdapter(this, articleList);
         recyclerView.setAdapter(articleDataAdapter);
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -57,10 +62,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         MainModel mainModel = new Gson().fromJson(parseText, MainModel.class);
-
-
-        //Log.i("GSON", mainModel.getStatus() + " " + mainModel.getTotalResults());
-        //  Log.i("GSON1",  articles.getUrlToImage());
         articleList.addAll(Arrays.asList(mainModel.getArticles()));
     }
 }
