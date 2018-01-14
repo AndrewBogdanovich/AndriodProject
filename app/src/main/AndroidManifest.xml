@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".Activitys.MainActivity" />
         <activity android:name=".Activitys.WebViewActivity" />
+        <activity android:name=".Activitys.SearchActivity"/>
 
     </application>
 

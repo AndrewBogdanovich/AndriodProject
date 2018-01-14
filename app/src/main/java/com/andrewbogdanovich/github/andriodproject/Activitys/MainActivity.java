@@ -1,10 +1,13 @@
 package com.andrewbogdanovich.github.andriodproject.Activitys;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
@@ -22,22 +25,29 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
 
     List<Articles> articleList = new ArrayList<>();
     SwipeRefreshLayout swipeRefreshLayout;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // initView();
         setContentView(R.layout.activity_main);
         loadParser();
         loadDataInRecyclerView();
-        //Toast.makeText(this, parseText, Toast.LENGTH_SHORT).show();
-
+        initView();
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
-
     }
 
+    public void initView() {
+        imageView = findViewById(R.id.search_ico_image_view);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity( new Intent(MainActivity.this, SearchActivity.class));
+            }
+        });
+    }
 
     private void loadDataInRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.Recycler_View);
@@ -64,14 +74,15 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
         articleList.addAll(Arrays.asList(mainModel.getArticles()));
     }
 
-
     @Override
     public void onRefresh() {
+        Intent intent = new Intent(this, this.getClass());
+        finish();
+        this.startActivity(intent);
         swipeRefreshLayout.setRefreshing(true);
         swipeRefreshLayout.postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 swipeRefreshLayout.setRefreshing(false);
             }
         }, 3000);

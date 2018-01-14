@@ -42,7 +42,6 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
         // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
 
 
-
     }
 
     @Override
