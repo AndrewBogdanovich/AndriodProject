@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.MainModel;
-import com.andrewbogdanovich.github.andriodproject.ParseTask;
+import com.andrewbogdanovich.github.andriodproject.ArticleParseTask;
 import com.andrewbogdanovich.github.andriodproject.R;
 import com.google.gson.Gson;
 
@@ -58,7 +58,7 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
 
     @SuppressLint("SetTextI18n")
     private void loadParser() {
-        ParseTask parseTask = new ParseTask();
+        ArticleParseTask parseTask = new ArticleParseTask();
         parseTask.execute();
 
         String parseText = null;

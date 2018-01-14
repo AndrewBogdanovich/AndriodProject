@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class ParseTask extends AsyncTask<Void, Void, String> {
+public class ArticleParseTask extends AsyncTask<Void, Void, String> {
 
     private static final String LOG_TAG = "JSONString";
     private String resultJson = " ";
@@ -39,8 +39,6 @@ public class ParseTask extends AsyncTask<Void, Void, String> {
             e.printStackTrace();
         }
         return resultJson;
-
-
     }
 
 
@@ -48,8 +46,6 @@ public class ParseTask extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String strJson) {
         super.onPostExecute(strJson);
         Log.i(LOG_TAG, strJson);
-
-
     }
 
 }
