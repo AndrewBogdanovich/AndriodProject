@@ -26,7 +26,7 @@ public class Articles {
         this.url = url;
     }
 
-    public Articles() {
+    public Articles(String articleId, String articlePublishedAt, String articleTitle, Object o) {
 
     }
 

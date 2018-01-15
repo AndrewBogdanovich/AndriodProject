@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
+import com.andrewbogdanovich.github.andriodproject.ArticleParseTask;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
 import com.andrewbogdanovich.github.andriodproject.Models.Article.MainModel;
-import com.andrewbogdanovich.github.andriodproject.ArticleParseTask;
 import com.andrewbogdanovich.github.andriodproject.R;
 import com.google.gson.Gson;
 
@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
 
     List<Articles> articleList = new ArrayList<>();
     SwipeRefreshLayout swipeRefreshLayout;
-    private ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +40,16 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
     }
 
     public void initView() {
-        imageView = findViewById(R.id.search_ico_image_view);
+        ImageView imageView = findViewById(R.id.search_ico_image_view);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity( new Intent(MainActivity.this, SearchActivity.class));
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
+
+
+
     }
 
     private void loadDataInRecyclerView() {
