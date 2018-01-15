@@ -39,7 +39,7 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
         final Articles article = articleList.get(position);
         holder.titleView.setText(article.getTitle());
         holder.publishedAtView.setText(article.getPublishedAt());
-        // holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
+        //holder.imageView.setImageResource(Integer.parseInt(article.getUrlToImage()));
 
 
     }
@@ -53,13 +53,13 @@ public class ArticleDataAdapter extends RecyclerView.Adapter<ArticleDataAdapter.
         final TextView titleView;
         final TextView publishedAtView;
         final RecyclerView recyclerView;
-        //final ImageView imageView;
+       // final ImageView imageView;
 
         @SuppressLint("WrongViewCast")
         ViewHolder(View view) {
             super(view);
             view.setOnClickListener(this);
-            // imageView = view.findViewById(R.id.newsImage_image_view);
+          //  imageView = view.findViewById(R.id.image_loader_image_view);
             titleView = view.findViewById(R.id.title_text_view);
             publishedAtView = view.findViewById(R.id.published_text_view);
             recyclerView = view.findViewById(R.id.Recycler_View);

@@ -37,9 +37,13 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
+        /*String url = getUrl();
+        Image.INSTANCE.load(url).into(loader);*/
+
     }
 
     public void initView() {
+
         ImageView imageView = findViewById(R.id.search_ico_image_view);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +53,18 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
         });
 
 
-
     }
+
+    /*public String getUrl() {
+
+        for (Articles articles : articleList) {
+            String url;
+            url = articles.getUrlToImage();
+            return url;
+        }
+        return null;
+    }*/
+
 
     private void loadDataInRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.Recycler_View);
@@ -72,7 +86,6 @@ public class MainActivity extends FragmentActivity implements SwipeRefreshLayout
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         MainModel mainModel = new Gson().fromJson(parseText, MainModel.class);
         articleList.addAll(Arrays.asList(mainModel.getArticles()));
     }

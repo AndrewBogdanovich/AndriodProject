@@ -30,6 +30,7 @@ public class Articles {
 
     }
 
+
     public String getPublishedAt() {
         return publishedAt;
     }
