@@ -13,20 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Activitys.SplashActivity"
-            android:theme="@style/SplashTheme"
-            tools:ignore="InnerclassSeparator">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Activitys.MainActivity" />
-        <activity android:name=".Activitys.WebViewActivity" />
-        <activity android:name=".Activitys.SearchActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.SearchActivity" />
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.andrewbogdanovich.github.andriodproject.Fragments;
+package com.andrewbogdanovich.github.andriodproject.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;

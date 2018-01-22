@@ -1,4 +1,4 @@
-package com.andrewbogdanovich.github.andriodproject.Activitys;
+package com.andrewbogdanovich.github.andriodproject.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.andrewbogdanovich.github.andriodproject.Activitys;
+package com.andrewbogdanovich.github.andriodproject.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -9,10 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.andrewbogdanovich.github.andriodproject.Adapters.ArticleDataAdapter;
+import com.andrewbogdanovich.github.andriodproject.adapter.ArticleDataAdapter;
 import com.andrewbogdanovich.github.andriodproject.ArticleParseTask;
-import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
-import com.andrewbogdanovich.github.andriodproject.Models.Article.MainModel;
+import com.andrewbogdanovich.github.andriodproject.model.Articles;
+import com.andrewbogdanovich.github.andriodproject.model.MainModel;
 import com.andrewbogdanovich.github.andriodproject.R;
 import com.google.gson.Gson;
 

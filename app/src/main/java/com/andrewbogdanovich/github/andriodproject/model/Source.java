@@ -1,4 +1,4 @@
-package com.andrewbogdanovich.github.andriodproject.Models.Article;
+package com.andrewbogdanovich.github.andriodproject.model;
 
 public class Source {
     private String id;

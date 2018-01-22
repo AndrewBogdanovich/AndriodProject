@@ -7,56 +7,53 @@
     android:orientation="vertical">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorRed">
+
+        <ImageView
+            android:id="@+id/menu_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_reorder_black_24dp" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorRed">
+        <ImageView
+            android:layout_width="176dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_2000px_bbc_news_einfach_svg" />
 
-                <ImageView
-                    android:id="@+id/menu_image_view"
-                    android:layout_width="26dp"
-                    android:layout_height="34dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_reorder_black_24dp"/>
+        <ImageView
+            android:id="@+id/search_ico_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search_black_24dp" />
 
-
-
-                <ImageView
-                    android:layout_width="244dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_2000px_bbc_news_einfach_svg" />
-
-                <ImageView
-                    android:id="@+id/search_ico_image_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_search_black_24dp" />
-
-            </LinearLayout>
+    </LinearLayout>
 
 
-            <android.support.v4.widget.SwipeRefreshLayout
-                android:id="@+id/swipe_refresh_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/Recycler_View"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    app:layoutManager="LinearLayoutManager" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Recycler_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            app:layoutManager="LinearLayoutManager" />
 
-            </android.support.v4.widget.SwipeRefreshLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

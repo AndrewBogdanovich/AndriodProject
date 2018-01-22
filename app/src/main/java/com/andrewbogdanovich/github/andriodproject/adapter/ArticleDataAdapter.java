@@ -1,4 +1,4 @@
-package com.andrewbogdanovich.github.andriodproject.Adapters;
+package com.andrewbogdanovich.github.andriodproject.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.andrewbogdanovich.github.andriodproject.Activitys.WebViewActivity;
-import com.andrewbogdanovich.github.andriodproject.Models.Article.Articles;
+import com.andrewbogdanovich.github.andriodproject.activity.WebViewActivity;
+import com.andrewbogdanovich.github.andriodproject.model.Articles;
 import com.andrewbogdanovich.github.andriodproject.R;
 
 import java.util.List;
